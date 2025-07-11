@@ -28,7 +28,7 @@ archives:
   - format: tar.gz
     name_template: >-
       {{ .ProjectName }}-
-      {{- .Version }}.
+      v{{- .Version }}.
       {{- .Os }}-
       {{- .Arch }}
     format_overrides:
