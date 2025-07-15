@@ -2,6 +2,10 @@
 
 # Varnish exporter for Prometheus
 
+> This project was forked from [jonnenauha/prometheus_varnish_exporter](https://github.com/jonnenauha/prometheus_varnish_exporter) to keep it alive and fix arm64 support. 
+>
+> The original project is no longer maintained, so this fork will be used for fixes and improvements I might need.
+ 
 ![Grafana example](dashboards/jonnenauha/dashboard.png)
 
 Scrapes the `varnishstat -j` JSON output on each Prometheus collect and exposes all reported metrics. Metrics with multiple backends or varnish defined identifiers (e.g. `VBE.*.happy SMA.*.c_bytes LCK.*.creat`) and other metrics with similar structure (e.g. `MAIN.fetch_*`) are combined under a single metric name with distinguishable labels. Vanish naming conventions are preserved as much as possible to be familiar to Varnish users when building queries, while at the same time trying to following Prometheus conventions like lower casing and using `_` separators.
